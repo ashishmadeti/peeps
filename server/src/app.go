@@ -56,7 +56,7 @@ func createUser(c *gin.Context) {
 		return
 	}
 
-	hash, _ := bcrypt.GenerateFromPassword([]byte(newUser.Password), 0)
+	hash, _ := bcrypt.GenerateFromPassword([]byte(newUser.Password), bcrypt.DefaultCost)
 	newUser.Password = string(hash)
 	newUser.IP = getIPAddress(c)
 
