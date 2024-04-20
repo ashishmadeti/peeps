@@ -18,7 +18,7 @@ type user struct {
 	IP       string `gorm:"not null"`
 }
 
-// TODO: Do not use global variable here
+// TODO: Do not use global variable here. Should use repository pattern
 var db *gorm.DB
 
 func getIPAddress(c *gin.Context) string {
